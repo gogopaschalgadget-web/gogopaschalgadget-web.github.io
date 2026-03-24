@@ -1,40 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZLDKMTPKP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6ZLDKMTPKP');
-</script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZLDKMTPKP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6ZLDKMTPKP');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5182415121977508" crossorigin="anonymous"></script>
-    <title>GoPaschal — Digital Tools, Guides &amp; Resources</title>
+    <meta name="description" content="GoPaschal — Free digital tools, expert guides, and resources. Trade tool reviews, educational games for kids, and class action settlement finder.">
+    <title>GoPaschal — Digital Tools, Guides & Resources</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        :root {
+            --navy: #0a1628;
+            --slate: #1E293B;
+            --purple: #6C63FF;
+            --teal: #006B7F;
+            --emerald: #059669;
+            --pink: #EC4899;
+            --orange: #E85A1B;
+            --gold: #DFB94E;
+            --text: #E2E8F0;
+            --text-mid: #94A3B8;
+            --border: rgba(255,255,255,0.08);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .container { max-width: 800px; padding: 2rem; text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p { color: #aaa; font-size: 1.1rem; margin-bottom: 2rem; }
-        .sites { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .site-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; width: 220px; text-decoration: none; color: #fff; transition: all 0.2s; }
-        .site-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-        .site-card h3 { margin-bottom: 0.5rem; }
-        .site-card span { color: #aaa; font-size: 0.9rem; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(108,99,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 600;
+            margin-bottom: 28px; color: var(--text-mid);
+        }
+        .hero h1 {
+            font-size: 48px; font-weight: 900; line-height: 1.15; margin-bottom: 16px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #fff 0%, #94A3B8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero .subtitle { font-size: 18px; color: var(--text-mid); max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+        /* Sites Grid */
+        .sites { max-width: 1000px; margin: 0 auto; padding: 20px 24px 80px; }
+        .sites-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .site-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .site-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .card-header {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+        }
+        .card-header .tag {
+            position: absolute; top: 14px; right: 14px;
+            font-size: 11px; font-weight: 700; padding: 4px 12px;
+            border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .ch-trades { background: linear-gradient(135deg, rgba(0,107,127,0.3), rgba(0,72,96,0.5)); }
+        .ch-trades .tag { background: rgba(232,90,27,0.8); color: white; }
+        .ch-edu { background: linear-gradient(135deg, rgba(108,99,255,0.3), rgba(236,72,153,0.3)); }
+        .ch-edu .tag { background: rgba(108,99,255,0.8); color: white; }
+        .ch-claim { background: linear-gradient(135deg, rgba(5,150,105,0.3), rgba(4,120,87,0.4)); }
+        .ch-claim .tag { background: rgba(5,150,105,0.8); color: white; }
+        .card-body { padding: 24px; }
+        .card-body h3 { font-size: 20px; font-weight: 800; color: white; margin-bottom: 8px; }
+        .card-body p { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+        .card-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; font-weight: 700; transition: gap 0.3s;
+        }
+        .site-card:hover .card-link { gap: 10px; }
+        .cl-trades { color: var(--orange); }
+        .cl-edu { color: var(--purple); }
+        .cl-claim { color: var(--emerald); }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 24px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 50px 20px 40px; }
+            .hero h1 { font-size: 32px; }
+            .sites-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>GoPaschal</h1>
-        <p>Digital tools, guides, and resources</p>
-        <div class="sites">
-            <a href="/tradespro-guide/" class="site-card"><h3>TradesPro</h3><span>Expert guides for trade professionals</span></a>
-            <a href="/eduspark/" class="site-card"><h3>EduSpark</h3><span>Learning games for kids</span></a>
-            <a href="/claimcheck/" class="site-card"><h3>ClaimCheck</h3><span>Find &amp; file settlement claims</span></a>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge"><i class="fas fa-rocket" style="color:var(--gold);"></i> Free Digital Tools & Resources</div>
+            <h1>GoPaschal</h1>
+            <p class="subtitle">Expert-built tools, guides, and resources for professionals, parents, and consumers. Everything free to start.</p>
         </div>
-    </div>
+    </section>
+
+    <section class="sites">
+        <div class="sites-grid">
+            <a href="/tradespro-guide/" class="site-card">
+                <div class="card-header ch-trades">
+                    <span class="tag">Tools & Reviews</span>
+                    &#128295;
+                </div>
+                <div class="card-body">
+                    <h3>TradesPro Guide</h3>
+                    <p>Expert-tested tool reviews and buying guides for plumbing, electrical, HVAC, and construction professionals.</p>
+                    <span class="card-link cl-trades">Browse Tools <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="/eduspark/" class="site-card">
+                <div class="card-header ch-edu">
+                    <span class="tag">Learning Games</span>
+                    &#127891;
+                </div>
+                <div class="card-body">
+                    <h3>EduSpark</h3>
+                    <p>Free, curriculum-aligned learning games for kids K-8. Math, reading, science, and spelling — created by educators.</p>
+                    <span class="card-link cl-edu">Play Free <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="/claimcheck/" class="site-card">
+                <div class="card-header ch-claim">
+                    <span class="tag">Settlement Finder</span>
+                    &#9878;&#65039;
+                </div>
+                <div class="card-body">
+                    <h3>ClaimCheck</h3>
+                    <p>Find open class action settlements and claim money you may be owed. 30+ active settlements across 9 categories.</p>
+                    <span class="card-link cl-claim">Search Settlements <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 GoPaschal. All rights reserved.</p>
+    </footer>
 </body>
 </html>
